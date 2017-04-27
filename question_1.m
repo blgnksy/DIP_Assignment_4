@@ -1,4 +1,4 @@
-function question_1_b(n)
+function question_1(n)
 n=10;
 figure;
 

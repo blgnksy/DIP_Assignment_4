@@ -15,4 +15,7 @@
 % g2=question_2_e(g2);
 
 %begin question_3_a()
-question_3_a(imread('./inputs/Assignment_4.jpg'),6);
+% question_3_a(imread('./inputs/Assignment_4.jpg'),4,8);
+
+%begin question_3_b()
+question_3_b(imread('./inputs/Assignment_4.jpg'),4,8);

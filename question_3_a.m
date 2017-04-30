@@ -1,29 +1,36 @@
-function question_3_a(img_orj,d0)
-
+function question_3_a(img_orj,sig_x,sig_y)
 [r,c]=size(img_orj);
-
-d=zeros(r,c);
-h=zeros(r,c);
-
 for i=1:r
     for j=1:c
-     d(i,j)=  sqrt( (i-(r/2))^2 + (j-(c/2))^2);
+     d(i,j)=  sqrt( (i-(r/2))^2/sig_x + (j-(c/2))^2/sig_y);
+    end
+end
+for i=1:r
+    for j=1:c
+      H(i,j)= exp ( -( (d(i,j)^2)/2 ) );
     end
 end
 
+Hpadded=zeros(2*size(img_orj));
 for i=1:r
     for j=1:c
-      h(i,j)= exp ( -( (d(i,j)^2)/(2*(d0^2)) ) );
+        Hpadded(i+r/2,j+c/2)=H(i,j);
     end
 end
 
-
-for i=1:r
-    for j=1:c
-    res(i,j)=(h(i,j))*img_orj(i,j);
-    end
-end
 figure;
-imshow(res);
-
+subplot(2,2,1),imshow(Hpadded),title('Padded Filter');
+fpadded=zeros(2*size(img_orj));
+for i=1:r
+    for j=1:c
+        fpadded(i,j)=img_orj(i,j);
+    end
+end
+subplot(2,2,2),imshow(mat2gray(fpadded)),title('Padded Image');
+F=fft2(fpadded);
+G=Hpadded.*F;
+subplot(2,2,3),imshow(double(G)),title('Response in Frequency Domain');
+g= real(ifft2(G));
+g=g(1:r,1:c);
+subplot(2,2,4),imshow(mat2gray(double(g))),title('Response in Spatial Domain');
 end

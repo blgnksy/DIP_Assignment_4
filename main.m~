@@ -12,4 +12,3 @@ GC=question2_c(G,MagL,Phase);
 g2=question_2_d(GC);
 
 %begin question_2_e()
-g2=question_2_e(g2);

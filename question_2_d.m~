@@ -1,5 +1,0 @@
-function question_2_d(CMag,CPhase)
-gc=ifft2(CMag);
-figure;
-subplot(1,1,1),imshow(gc));
-end

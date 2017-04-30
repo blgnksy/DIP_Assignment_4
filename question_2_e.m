@@ -1,3 +1,19 @@
+%====================================================================
+%> @brief Multiply input image by (-1)^(x+y)
+%>
+%>
+%> @author Bilgin Aksoy
+%>
+%> @param g2 : Input image
+%>
+%> @retval g2 : Output image
+%>
+%> @example 
+%> g2=question_2_e(g2);
+%>
+%====================================================================
+
+
 function g2= question_2_e(g2)
 [x,y]=size(g2);
 

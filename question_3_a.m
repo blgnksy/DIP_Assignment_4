@@ -1,3 +1,17 @@
+%====================================================================
+%> @brief Filters in frequency domain with Gaussian Low Pass Filter.
+%>
+%>
+%> @author Bilgin Aksoy
+%>
+%> @param img_orj : Input image
+%> @param sig_x : Standart deviation of x direction
+%> @param sig_y : Standart deviation of y direction
+%>
+%> @example 
+%> question_3_a(imread('./inputs/Assignment_4.jpg'),4,8);
+%>
+%====================================================================
 function question_3_a(img_orj,sig_x,sig_y)
 [r,c]=size(img_orj);
 for i=1:r
@@ -28,6 +42,8 @@ for i=1:r
 end
 subplot(2,2,2),imshow(mat2gray(fpadded)),title('Padded Image');
 F=fft2(fpadded);
+F=abs(F);
+F=fftshift(F);
 G=Hpadded.*F;
 subplot(2,2,3),imshow(double(G)),title('Response in Frequency Domain');
 g= real(ifft2(G));

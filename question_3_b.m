@@ -1,3 +1,17 @@
+%====================================================================
+%> @brief Filters in spatial domain with Gaussian Low Pass Filter.
+%>
+%>
+%> @author Bilgin Aksoy
+%>
+%> @param img_orj : Input image
+%> @param sig_x : Standart deviation of x direction
+%> @param sig_y : Standart deviation of y direction
+%>
+%> @example 
+%> question_3_b(imread('./inputs/Assignment_4.jpg'),4,8);
+%>
+%====================================================================
 function question_3_b(img_orj,sig_x,sig_y)
 [r,c]=size(img_orj);
 for i=1:r

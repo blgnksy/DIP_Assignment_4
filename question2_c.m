@@ -1,3 +1,19 @@
+%====================================================================
+%> @brief Computes the conjugate of given frequency response.
+%>
+%>
+%> @author Bilgin Aksoy
+%>
+%> @param G : Input Frequency Response.
+%> @param Mag : Input Magnitude Response.
+%> @param Phase : Input Phase Response.
+%>
+%> @retval GC : Conjugate of given frequency response.
+%>
+%> @example 
+%>GC=question2_c(G,Mag,Phase);
+%>
+%====================================================================
 function GC=question2_c(G,Mag,Phase)
 GC=conj(G);
 MagC=abs(GC);

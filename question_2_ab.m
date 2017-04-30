@@ -1,3 +1,19 @@
+%====================================================================
+%> @brief Computes the frequency response of an input image
+%>
+%>
+%> @author Bilgin Aksoy
+%>
+%> @param f : Input image
+%>
+%> @retval G : The frequency response of input.
+%> @retval MagL : Magnitude Response.
+%> @retval Phase : Phase Response.
+%>
+%> @example 
+%>[G,MagL,Phase]=question_2_ab(f);
+%>
+%====================================================================
 function [G,MagL,Phase]=question_2_ab(f)
 [x,y]=size(f) ;
 for x_i=1:x
